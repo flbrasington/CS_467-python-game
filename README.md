@@ -1,1 +1,1 @@
-Frank Brasington, Fall 2016
+Frank L Brasington, Fall 2016
