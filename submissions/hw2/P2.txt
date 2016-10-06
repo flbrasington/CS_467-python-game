@@ -1,0 +1,41 @@
+Frank Brasington
+CS362
+Assignment 2 part2
+
+
+This text document is broken up into 3 parts. 1 for the Cardtest.java and one for the CardCollectionTest.java and 3 third
+to address any questions for the assignment not answered in parts 1 & 2.
+
+CardCollectionTest.java:
+The apporach I took to this was to check the collection of cards by adding and removing cards from the deck.
+
+First I checked that when a new CardCollection is made that the deck is empty. The deck was empty as expected.
+
+Then I checked what happens when a card is removed from the top, middle and bottom of each deck.
+No problems were encountered when cards are removed from the top of the deck.
+There were errors when cards are removed from the middle and bottom of the deck. The last card from the middle and bottom
+both had the last card in the deck with the wrong value. 
+
+This is were I would begin my search for the problem.
+
+CardTest.java
+First test I did was to comfirm that all the cards in the deck were the proper cards. 
+I found that the deck had 52 cards and all the cards were unquine in value.
+
+All of the cards are visibles or not visible as per the setup.
+
+I was unable to find any errors in the Card.java.
+
+The BUG:
+The bug appears to be when cards are removed. The removing cards from the deck. The bug as I understand it is that
+the shifting of cards over doesn't work for when any card other than the top of the deck is removed. The error appears
+to be caused when the remove function encoutures the handpos of the card that is removed. 
+
+Would this error surface when the class was used for the following: 
+...a deck where cards are always drawn from the top?
+	I was unable to find an error for this case.
+...a hand where the player is required to keep their cards in order?
+	I was unable to find a way an error could happen for this case.
+...a deck that is shuffled by removing cards from a random place in the deck and adding them back via method add?
+	This seems to be the main problem. From what I was able to find adding and removing cards not to the top of the deck causes
+cards to not have their expected values.
