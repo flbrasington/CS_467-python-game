@@ -1,0 +1,45 @@
+Name: Brasington, Frank L
+Assignment: 3
+part: 2
+
+1:
+*Why don't we need to consider a partition where CardCollection.cards is null?
+-I'm not 100% on this but I would guess that is because the null case would be when the cardcollection.cards has a
+size of zero or is emtpy. The test cases should give back the same results reguardless if the CardCollection is empty or NULL. 
+
+*Do we consider every possible state of CardCollection.cards in at least one partition?
+No, The only other condition that I can think of is when cards have already been removed from the deck, but that case
+would only give more problems right now because discarding cards seems to be where the error is and that would cause
+more errors to appear.
+
+*Do we conisder every possible value of handPos in at least one partition?
+Yes, The first card, the last card and all the cards inbetween are all tested. This should produce the desired reults
+
+*Is this partitioning Complete? In other words, does the partitioning above consider every possible combination of 
+CardCollection.cards and handPos?
+
+The only conditions that I don't see that fit is the  number of cards in a deck. Typical vegas balck jack has 10 
+decks and this only goes up to 2 decks. For 2 decks I do think that this covers all of the possible cobinations.
+
+2:
+The condition that I found when doing homework 2 is that the when any card that isn't handPos = 0 is discarded
+the errors. The discard card function only seems to work if the frist card is removed.
+
+3:
+without knowing what the other cards tests results are I'll have to go only on b6.
+First I had assumed that the handPos of 0<x<cards.size()-1 was for all values between 0 and Cards.size()-1. So if
+the size was 5 b6 would be testing 1,2,3,4.
+
+I would say that there is a valid need for testing of all the values between 0 and cards.size()-1. It isn't clear why
+hand position 1 and 2 are giving different results. I think the test needs to be changed to 
+@Test public void testCardRemoveFromMiddle(){
+	for (int i = 1; i < cards.size() - 1; i++)
+		testCardRemoveFromMiddle(i);
+} 
+
+This test would give more input. If the test only fails on 2 or on every even number then That would give me more 
+insight into the discardCard(i) function. 
+
+Perhaps partiton b6 should be expanded or explained more.
+
+
