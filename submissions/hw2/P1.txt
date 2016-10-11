@@ -1,0 +1,39 @@
+Frank Brasington
+CS362
+Assignment 2 part1
+
+function: testlastZero
+Over what inputs, if any, does this function throw an Exception?
+I didn't find any for the testing. I tested inputs for when zero isn't in the array. When only 1 zero was in the array.
+When two or more zeros are in the the array. 
+
+Over what inputs, if any, does this function provide incorrect output?
+For the case when there is only 1 zero and that zero is the first element in the array the fucntion will not detect
+that zero.
+
+function: testlast
+Over what inputs, if any, does this function throw an Exception?
+The function last() thorws an exception. last tries to find the -1 of an array.
+So when my test included an expected index out of bounds the test shows that
+this function does thorw an exception.
+
+Over what inputs, if any, does this function provide incorrect output?
+I found that the function will return the first time the find number is detected. for the array[1,1,1] the function will
+return 0 when the correct answer should be 2. This is a bit strange since it also throws the exception. 
+The function only provides valid input for when the first element of the array maches the search value.
+
+function: testpositive
+Over what inputs, if any, does this function throw an Exception?
+I didn't find any for the testing on the positive
+
+Over what inputs, if any, does this function provide incorrect output?
+I found no problems accross a range of integers from negative to positive.
+I included values that were negative or zero. The function counted the correct number of positive integers.
+The zero or negative entries were not couunted as expected.
+
+function: testoddOrPos
+Over what inputs, if any, does this function throw an Exception?
+I didn't find any for the testing on the positive
+
+Over what inputs, if any, does this function provide incorrect output?
+I included a range of values that covered a wide range of integers and no incorrect outputs were found.
