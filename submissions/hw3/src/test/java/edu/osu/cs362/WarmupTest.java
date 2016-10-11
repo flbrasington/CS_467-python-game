@@ -24,11 +24,16 @@ public class WarmupTest  {
 			assertEquals(result, -1);
 
 			int result2 = WarmUp.lastZero(new int[] {1,0,3,4,5});
-			assertEquals(result2,1);
+			assertEquals(result2, 1);
 			
 			int result3 = WarmUp.lastZero(new int[] {1,0,3,4,0});
-			assertEquals(result3,4);
-		
+			assertEquals(result3, 4);
+			
+			int result4 = Warmup.lastZero(new int[] {0});
+			assertEquals(result4, 0);	
+
+			int result5 = Warmup.lastZero(new int{} {2});
+			assertEquals(result5, -1);
 
 		}
 
