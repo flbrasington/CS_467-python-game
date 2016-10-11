@@ -8,7 +8,8 @@ I didn't find any for the testing. I tested inputs for when zero isn't in the ar
 When two or more zeros are in the the array. 
 
 Over what inputs, if any, does this function provide incorrect output?
-I wasn't able to find any range of values that provided an incorrect output.
+For the case when there is only 1 zero and that zero is the first element in the array the fucntion will not detect
+that zero.
 
 function: testlast
 Over what inputs, if any, does this function throw an Exception?
