@@ -1,0 +1,20 @@
+Name: Brasington, Frank L
+Course: CS362
+Assignemnt: 4
+
+Part 1:
+1: The red line seems to be for conditions statments such as in what I looked at:
+if(dealerScore<hadScore(p.getHand())){}. The number seems to indicate the number of times
+that this condition statment is ran.
+
+2:  Interfaces how how objects in java interact with the outside world. I believe that the interfaces
+are marked as N/A because we can't test the interface only the source code for functions.
+
+3:  The problem with a function like testBasicFunctionality is that it's vague and not well defined. The
+test can be broken up into smaller testing segments. A better test would be break up testBasicFunctionality
+into testDeck, testPlayersHand, and so on.
+
+4:  The number of if/else statements will increase the number of branches to be covered. Each if/else statment
+will make a new path that will be required to be covered. The more if/else statments the more branches there
+are for coverage.
+

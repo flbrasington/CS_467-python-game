@@ -1,0 +1,37 @@
+Name: Frank Brasington
+Assignment: 4
+Part: 4
+
+1) True
+2) Fasle
+3) False
+Line Coverage just means that each line of code has coverage but that doesn't mean there is
+good branch coverage. Line coverage doesn't lest all the possible combaination for things like
+if statements which could lead to bad coverage.
+
+4) True. 
+If all the Branches are coverage then every line would also have coverage. 
+
+5) False
+The inverse is true. 100% Path Coverage would have 100% Branch Coverage. Each branch wouldn't coverage isn't testing
+for each case of a path so you could get 100% Branch Coverage but not get 100% path Coverage.Branch checks for each
+descion but not for each path a program takes. One example I looked up while researching was this.
+  $h = 0;
+  if ($x)
+  {
+      $h = { a => 1 };
+  }
+  if ($y)
+  {
+      print $h->{a};
+  }
+A branch coverage would not detech errors in this samele code. (http://pjcj.net/testing_and_code_coverage/paper.html#path_coverage)
+
+6) I don't fully understand the topic yet but I feel like my intuitions for what makes a good quality test suite is 
+something that covers all the paths. With the assignment I don't feel like the program is coverage very well. The line
+coverage feels like it leaves too much open and that more errors can happen even if you feel good about it.
+
+7) Input Domain Partitioning is to break down all the parts of a class or domain into different parts. Partintioning 
+can be infinite as the input domain can be broken down into smaller and smaller partitions. THe input domain partitionig 
+doesn't coverage what happens inside the code only that certain inputs give bad results. Coverage that's optimized would
+cover every piece of code inside and would in an ideal sitiuation cover all of the paths, branches and lines in the code.
