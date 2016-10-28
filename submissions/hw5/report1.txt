@@ -1,0 +1,78 @@
+Name: Frank Brasington
+Assignment: 5
+Report: 1
+
+Problem: Dealer doesn't deal cards to Dealer's hand.
+
+Detailed description of the issue: 
+	Currently when the dealer deals cards to himself the cards are added back to the deck and not to the dealer's
+	hand.
+
+Effects on Game:
+	This bug effects all aspects of the game. isInsureace avaiable fails because there are no cards in the deck,
+The dealer's score is always less than the player's hand.
+
+Test Code Snippet:
+		Dealer d = new Dealer();
+		Card c1 = new Card(Card.Face.ACE,Card.Suit.HEART);
+		Card c2 = new Card(Card.Face.TEN,Card.Suit.HEART);
+		c1.setVisible(true);
+		
+		d.acceptCard(c1);
+		d.acceptCard(c2);
+		
+		assertNotEquals(true, d.isInsuranceAvailable());
+
+		This is the test in the isInsuranceAvailable());
+
+Program Code Snippet:
+
+public  class Dealer implements DealerAction{
+
+
+	
+	private List<Card> dealerHand = new ArrayList<Card>();
+	private List<Card> deck;
+
+
+	@Override
+	public void acceptCard(Card c) {
+		deck.add(c);
+	}
+		
+Error given:	
+	java.lang.NullPointerException
+
+	
+Changes made to fix bug:
+	public void acceptCard(Card c) {
+		dealerHand.add(c);
+	}
+	
+	
+Code for Verifing:
+	@Test
+	public void isInsuranceAvailableTest(){
+		Dealer d = new Dealer();
+		Card c1 = new Card(Card.Face.ACE,Card.Suit.HEART);
+		Card c2 = new Card(Card.Face.TEN,Card.Suit.HEART);
+		c1.setVisible(true);
+		
+		d.acceptCard(c1);
+		d.acceptCard(c2);
+		
+		assertNotEquals(false, d.isInsuranceAvailable());
+	}
+	
+	@Test
+	public void teststartingdealershand(){
+		DealerAction dt = mock(DealerAction.class);
+		PlayerAction pa = mock(PlayerAction.class);
+		
+		
+		when(pa.getAction()).thenReturn(PlayerAction.ActionType.STAND);
+		SimpleBlackjack j = new SimpleBlackjack(dt,new PlayerAction[]{pa});
+		j.playRound();
+		verify(dt, times(2)).dealCard(dt);
+		
+	}
