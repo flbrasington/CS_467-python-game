@@ -15,7 +15,7 @@ public  class Dealer implements DealerAction{
 
 	@Override
 	public void acceptCard(Card c) {
-		deck.add(c);
+		dealerHand.add(c);
 	}
 
 	@Override

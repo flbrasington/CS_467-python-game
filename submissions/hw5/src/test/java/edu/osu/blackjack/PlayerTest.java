@@ -73,7 +73,7 @@ public class PlayerTest {
 		int number = p.getCurrentBet();
 		assertEquals(number, 10);
     }
-	
+/*	
 	@Test
 	public void nextHandTest(){
 		Player p = new Player();
@@ -81,7 +81,7 @@ public class PlayerTest {
 		assertNotEquals("Player: []w nullb nulli null", p.toString());
 
 	}
-		
+*/	
 	@Test
 	public void getHandTest(){
 		Player p1 = new Player();
