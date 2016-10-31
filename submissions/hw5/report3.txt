@@ -1,0 +1,43 @@
+Name: Frank Brasington
+Assignment: 5
+Report: 3
+
+Problem: Player's wallet is set to null after each round.
+
+Detailed description of the issue: 
+	the nextHand() fucntion in the Player.java file set's the player's wallet to null each time the function
+	is called. 
+
+Effects on Game:
+	The player has 2 problems. First is that each time the player finishes a round his wallet is set to Null and
+	the player is unable to contiue playing. 
+
+Test Code Snippet:
+		Player p = new Player();
+		p.nextHand();
+		assertNotEquals("Player: []w nullb nulli null", p.toString());;
+	
+Program Code Snippet:
+	public void nextHand() {
+		currentBet = null;
+		currentWallet = null;
+		currentInsurance = null;
+	}
+		
+Error given:	
+	java.lang.AssertionError: Values should be different. Actual: Player: []w nullb nulli null
+
+Changes made to fix bug:
+	public void nextHand() {
+		currentBet = null;
+		currentInsurance = null;
+	}
+	
+Code for Verifing:	
+	@Test
+	public void nextHandTest(){
+		Player p = new Player();
+		p.nextHand();
+		assertNotEquals("Player: []w nullb nulli null", p.toString());
+
+	}
