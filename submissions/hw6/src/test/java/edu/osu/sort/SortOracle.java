@@ -15,7 +15,20 @@ public class SortOracle  {
 	   @param   sorted    a (possibly sorted) list of integers  
 	   @returns      True if the list is sorted in ascending order
 	*/
-	return false;
+
+	//sort the list from the collectiosn
+	Collections.sort(original);
+
+	//for loop to check original vs sroted list
+	for(int i=0; i<original.size(); i++){
+		if(original.get(i) != sorted.get(i)){
+			return false;
+		}
+	}
+
+
+
+	return true;
     }
 
 
