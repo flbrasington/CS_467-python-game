@@ -67,7 +67,6 @@ public  class Player implements PlayerAction{
 	@Override
 	public void nextHand() {
 		currentBet = null;
-		currentWallet = null;
 		currentInsurance = null;
 	}
 

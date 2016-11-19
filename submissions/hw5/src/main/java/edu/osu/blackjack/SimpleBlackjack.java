@@ -25,6 +25,8 @@ public class SimpleBlackjack {
 		
 		for(PlayerAction p: players ){
 			dealer.dealCard(dealer);
+			dealer.dealCard(dealer);
+			dealer.dealCard(p);
 			dealer.dealCard(p);
 		}
 	

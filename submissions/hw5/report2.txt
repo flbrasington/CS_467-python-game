@@ -1,0 +1,54 @@
+Name: Frank Brasington
+Assignment: 5
+Report: 2
+
+Problem: Player's standing hand isn't two cards.
+
+Detailed description of the issue: 
+	The Player is dealt 1 card when the game starts but blackjack  but two cards should be dealt to the player
+when the game starts.
+
+Effects on Game:
+	The effect on the game is that the player will have to always hit in order to recieve a full size hand that
+is suppost to start the game.
+
+Test Code Snippet:
+	DealerAction dt = mock(DealerAction.class);
+	PlayerAction pa = mock(PlayerAction.class);
+
+	when(pa.getAction()).thenReturn(PlayerAction.ActionType.STAND)
+		.thenReturn(PlayerAction.ActionType.STAND);	                          
+	SimpleBlackjack j = new SimpleBlackjack(dt,new PlayerAction[]{pa});
+	j.playRound();
+	verify(dt, times(2)).dealCard(pa);
+
+Program Code Snippet:
+	public void playRound(){
+		for(PlayerAction p: players ){
+			dealer.dealCard(dealer);
+			dealer.dealCard(p);
+		}
+	}
+	
+Error given:	
+	java.lang.NullPointerException
+
+	
+Changes made to fix bug:
+	for(PlayerAction p: players ){
+		dealer.dealCard(dealer);
+		dealer.dealCard(p);
+		dealer.dealCard(p);
+	}
+	
+Code for Verifing:
+	@Test //the player's starting hand should be 2 cards
+	public void testhandStartingHandSize(){
+		DealerAction dt = mock(DealerAction.class);
+		PlayerAction pa = mock(PlayerAction.class);
+		
+		when(pa.getAction()).thenReturn(PlayerAction.ActionType.STAND);
+		SimpleBlackjack j = new SimpleBlackjack(dt,new PlayerAction[]{pa});
+		j.playRound();
+		verify(dt, times(2)).dealCard(pa);
+	}
