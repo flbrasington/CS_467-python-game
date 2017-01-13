@@ -1,1 +1,2 @@
-Frank L Brasington, Fall 2016
+CS 467 Python Game
+Spring 2017
